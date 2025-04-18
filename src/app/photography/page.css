@@ -1,0 +1,53 @@
+/* Custom styles for the 3D stack effect */
+.stack-container {
+  perspective: 2000px;
+  transform-style: preserve-3d;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.stack-container > div {
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform, box-shadow, opacity;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.stack-container > div:hover,
+.stack-container > div.z-30 {
+  box-shadow: 0 15px 50px 0 rgba(var(--cyber-blue), 0.2), 0 5px 20px 0 rgba(0,0,0,0.15);
+  outline: 2px solid rgba(var(--cyber-blue), 0.4);
+}
+
+/* Custom scrollbar for the gallery container */
+.gallery-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.gallery-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.gallery-container::-webkit-scrollbar-thumb {
+  background: rgba(var(--cyber-blue), 0.5);
+  border-radius: 10px;
+}
+
+.gallery-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--cyber-blue), 0.7);
+}
+
+/* Animation for the active card */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(var(--cyber-blue), 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(var(--cyber-blue), 0); }
+  100% { box-shadow: 0 0 0 0 rgba(var(--cyber-blue), 0); }
+}
+
+.active-card {
+  animation: pulse 2s infinite;
+}
