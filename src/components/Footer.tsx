@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Github, Instagram, Linkedin, Mail } from "lucide-react";
+import { LINKS } from "@/config/links";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,7 +16,7 @@ export default function Footer() {
           </div>
           <div className="flex items-center space-x-6">
             <Link
-              href="https://github.com/"
+              href={LINKS.github}
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/60 hover:text-primary transition-colors"
@@ -24,7 +25,7 @@ export default function Footer() {
               <span className="sr-only">GitHub</span>
             </Link>
             <Link
-              href="https://www.linkedin.com/"
+              href={LINKS.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/60 hover:text-primary transition-colors"
@@ -33,7 +34,7 @@ export default function Footer() {
               <span className="sr-only">LinkedIn</span>
             </Link>
             <Link
-              href="https://www.instagram.com/"
+              href={LINKS.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/60 hover:text-primary transition-colors"
@@ -42,7 +43,7 @@ export default function Footer() {
               <span className="sr-only">Instagram</span>
             </Link>
             <Link
-              href="mailto:jiten@example.com"
+              href={LINKS.email}
               className="text-foreground/60 hover:text-primary transition-colors"
             >
               <Mail className="h-5 w-5" />

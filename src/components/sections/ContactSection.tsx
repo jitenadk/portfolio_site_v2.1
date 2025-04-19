@@ -3,12 +3,13 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { LINKS } from "@/config/links";
 
 const commands = [
   { id: "intro", text: "Interested in working together or just want to say hello?" },
   { id: "connect", text: "Connect with me via the form below or directly at:" },
-  { id: "email", text: "Email: jiten@example.com" },
-  { id: "linkedin", text: "LinkedIn: linkedin.com/in/jiten-adhikari" },
+  { id: "email", text: `Email: ${LINKS.email.replace(/^mailto:/, '')}` },
+  { id: "linkedin", text: `LinkedIn: ${LINKS.linkedin.replace(/^https?:\/\//, '')}` },
 ];
 
 export default function ContactSection() {
@@ -110,16 +111,20 @@ export default function ContactSection() {
                 <h3 className="text-lg font-semibold mb-4">Socials:</h3>
                 <div className="grid grid-cols-2 gap-2">
                   {[
-                    { name: "GitHub", link: "github.com/jitendotexe" },
-                    { name: "LinkedIn", link: "linkedin.com/in/jiten-adhikari" },
-                    { name: "Twitter", link: "twitter.com/jitendotexe" },
-                    { name: "Instagram", link: "instagram.com/jitendotexe" },
+                    { name: "Email", url: LINKS.email },
+                    { name: "GitHub", url: LINKS.github },
+                    { name: "LinkedIn", url: LINKS.linkedin },
+                    { name: "Twitter", url: LINKS.twitter },
+                    { name: "Instagram", url: LINKS.instagram },
+                    { name: "Flickr", url: LINKS.flickr },
                   ].map((social) => (
                     <div key={social.name} className="flex items-center space-x-2">
                       <span className="text-primary">$</span>
                       <div>
                         <div className="font-medium">{social.name}</div>
-                        <div className="text-xs text-foreground/60">{social.link}</div>
+                        <a href={social.url} className="text-xs text-foreground/60 hover:underline" target="_blank" rel="noopener noreferrer">
+                          {social.url.replace(/^mailto:|https?:\/\//, "")}
+                        </a>
                       </div>
                     </div>
                   ))}

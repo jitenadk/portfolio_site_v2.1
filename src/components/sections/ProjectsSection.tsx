@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Github, Shield, Network, Globe, Database } from "lucide-react";
 import Link from "next/link";
+import { LINKS } from "@/config/links";
 
 const projects = [
   {
@@ -12,7 +13,7 @@ const projects = [
     title: "SecNet Scanner",
     description: "An open-source network vulnerability scanner built with Python. Features automated scanning, detailed reports, and CVE database integration.",
     tags: ["Python", "Network Security", "Vulnerability Assessment"],
-    link: "https://github.com/",
+    link: `${LINKS.github}/SecNet`,
     icon: Network,
   },
   {
@@ -20,7 +21,7 @@ const projects = [
     title: "CryptoGuard",
     description: "File encryption tool with secure key management, AES-256 encryption, and intuitive UI for day-to-day secure file sharing.",
     tags: ["Cryptography", "Security", "Python", "Qt"],
-    link: "https://github.com/",
+    link: `${LINKS.github}/CryptoGuard`,
     icon: Shield,
   },
   {
@@ -28,7 +29,7 @@ const projects = [
     title: "ThreatMap Visualizer",
     description: "Real-time visualization of global cyber attacks and threat intelligence data with geolocation mapping.",
     tags: ["JavaScript", "D3.js", "APIs", "Real-time data"],
-    link: "https://github.com/",
+    link: `${LINKS.github}/ThreatMap`,
     icon: Globe,
   },
   {
@@ -36,7 +37,7 @@ const projects = [
     title: "SQLShield",
     description: "Database security tool that monitors for suspicious activity, prevents SQL injection attacks, and provides detailed audit logs.",
     tags: ["SQL", "Database Security", "Java"],
-    link: "https://github.com/",
+    link: `${LINKS.github}/SQLShield`,
     icon: Database,
   },
 ];
@@ -118,7 +119,7 @@ export default function ProjectsSection() {
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <Link
-              href="https://github.com/"
+              href={LINKS.github}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-sm font-mono text-foreground/70 hover:text-primary transition-all"

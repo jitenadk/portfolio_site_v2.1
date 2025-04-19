@@ -3,6 +3,7 @@ import { Space_Mono, Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import "./globals.css";
 
 const spaceMono = Space_Mono({
@@ -41,6 +42,7 @@ export default function RootLayout({
           <main className="pb-20">{children}</main>
           <Footer />
         </div>
+        <ScrollToTopButton />
       </body>
     </html>
   );
