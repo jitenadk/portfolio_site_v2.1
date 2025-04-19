@@ -63,7 +63,7 @@ export default function ProjectsSection() {
         </motion.div>
 
         <div className="cyber-card p-6 mb-10">
-          <div className="font-mono text-xs text-primary mb-6">~/jitendotexe/projects $ ls -la | grep featured</div>
+          <div className="font-mono text-xs terminal-text mb-6">~/jitendotexe/projects $ ls -la | grep featured</div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project, index) => (

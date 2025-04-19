@@ -80,7 +80,8 @@
   }
   /* Terminal/code text styling */
   .terminal-text {
-    @apply font-mono text-primary;
+    @apply font-mono;
+    color: #00ffa6;
   }
 
   /* Neon glowing elements */

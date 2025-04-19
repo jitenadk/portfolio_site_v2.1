@@ -82,7 +82,7 @@ export default function AboutSection() {
             className="lg:col-span-3 order-2 lg:order-1"
           >
             <div className="cyber-card p-6">
-              <div className="font-mono text-xs text-primary mb-2">~/jitendotexe/about $ cat bio.md</div>
+              <div className="font-mono text-xs terminal-text mb-2">~/jitendotexe/about $ cat bio.md</div>
               <p className="text-lg mb-4">
                 Hello! I'm <span className="text-primary font-medium">Jiten Adhikari</span>, a cyber security engineer
                 with a passion for strengthening digital defenses and finding vulnerabilities before they become threats.

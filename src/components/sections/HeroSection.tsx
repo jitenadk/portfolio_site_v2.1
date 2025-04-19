@@ -40,8 +40,8 @@ export default function HeroSection() {
 
       <div className="max-w-5xl mx-auto">
         <div className="cyber-card p-6 mb-6">
-          <div className="font-mono text-sm mb-1 text-foreground/60">
-            $ <span className="text-primary typing">whoami</span>
+          <div className="font-mono text-sm mb-1 terminal-text">
+            $ <span className="typing">whoami</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 glitch" data-text="Jiten Adhikari">
             Jiten Adhikari
@@ -56,8 +56,8 @@ export default function HeroSection() {
 
           <div className="font-mono text-sm mt-6 text-foreground/60 space-y-1">
             {visibleLines >= 1 && (
-              <div className="typing" style={{ animationDelay: "1.2s" }}>
-                $ <span className="text-primary">ls</span> ./interests
+              <div className="typing terminal-text" style={{ animationDelay: "1.2s" }}>
+                $ <span>ls</span> ./interests
               </div>
             )}
             {visibleLines >= 2 && (
@@ -66,8 +66,8 @@ export default function HeroSection() {
               </div>
             )}
             {visibleLines >= 3 && (
-              <div className="typing" style={{ animationDelay: "2.8s" }}>
-                $ <span className="text-primary cursor">_</span>
+              <div className="typing terminal-text" style={{ animationDelay: "2.8s" }}>
+                $ <span className="cursor">_</span>
               </div>
             )}
           </div>

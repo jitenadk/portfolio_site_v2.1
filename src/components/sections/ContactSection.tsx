@@ -91,12 +91,12 @@ export default function ContactSection() {
             className="cyber-card p-6"
           >
             <div className="flex flex-col space-y-4">
-              <div className="font-mono text-xs text-primary mb-2">~/jitendotexe/contact $ ./info.sh</div>
+              <div className="font-mono text-xs terminal-text mb-2">~/jitendotexe/contact $ ./info.sh</div>
 
               <div className="font-mono text-sm space-y-2 mb-4">
                 {commands.slice(0, visibleCommands).map((cmd, index) => (
-                  <div key={cmd.id} className="typing" style={{ animationDelay: `${index * 0.5}s` }}>
-                    <span className={index <= 1 ? "text-foreground" : "text-primary"}>{cmd.text}</span>
+                  <div key={cmd.id} className="typing text-primary" style={{ animationDelay: `${index * 0.5}s` }}>
+                    <span>{cmd.text}</span>
                   </div>
                 ))}
 
@@ -139,7 +139,7 @@ export default function ContactSection() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <div className="cyber-card p-6">
-              <div className="font-mono text-xs text-primary mb-6">~/jitendotexe/contact $ ./send_message.sh</div>
+              <div className="font-mono text-xs terminal-text mb-6">~/jitendotexe/contact $ ./send_message.sh</div>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -203,7 +203,7 @@ export default function ContactSection() {
                   </Button>
 
                   {formStatus === "success" && (
-                    <div className="mt-3 font-mono text-xs text-primary">
+                    <div className="mt-3 font-mono text-xs terminal-text">
                       <div className="typing" style={{ animationDelay: "0.2s" }}>
                         $ Message sent successfully!
                       </div>
