@@ -43,12 +43,14 @@ This is the **source code** for my personal portfolio website.
 ### Fonts
 
 - **Inter** – primary sans-serif font (via `next/font/google`)
-
-  <img alt="Inter Preview" src="./src/img/readme/inter.png" width="400" />
+    <p align="center">
+      <img alt="Inter Preview" src="./src/img/readme/inter.png" />
+    </p>
 
 - **Space Mono** – monospaced code font (via `next/font/google`)
-
-  <img alt="Space Mono Preview" src="./src/img/readme/space_mono.png" width="400" />
+    <p align="center">
+      <img alt="Space Mono Preview" src="./src/img/readme/space_mono.png" />
+    </p>
 
 ### Color Scheme
 
@@ -62,8 +64,9 @@ This is the **source code** for my personal portfolio website.
 - `--destructive`: #F14A4A
 - `--border`/`--input`: #E4E7EF
 - `--ring`: #17E9D1
-
-<a href="https://coolors.co/ffffff-0a0a0a-00ffd0-ff2da0-00ff6a-330000-f4f6fb-f4f6fb-f14a4a-e4e7ef-00ffd0"><img alt="Color Palette" src="./src/img/readme/color_palette.png" width="600" /></a>
+<p align="center">
+    <a href="https://coolors.co/fafafa-0a0a0a-17e9d1-ff2da0-17e98b-e5e7eb-f14a4a" target="_blank"><img alt="Color Palette" src="./src/img/readme/color_palette.png"/></a>
+</p>
 
 ---
 
