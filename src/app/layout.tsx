@@ -19,7 +19,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "jitendotexe",
-  description: "Portfolio of Jiten Adhikari - Cyber Security Engineer, Travel & Automotive Enthusiast, Photographer",
+  description: "Portfolio of Jiten Adhikari - Cyber Security Engineer, Travel & Automotive Enthusiast, Photographerrrrrrrr",
   icons: { icon: '/favicon.svg' },
 };
 
@@ -37,7 +37,7 @@ export default function RootLayout({
       )}>
         <div className="scanline" />
         <div className="noise" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7x1 mx-auto px-4 sm:px-6 lg:px-8">
           <Navbar />
           <main className="pb-20">{children}</main>
           <Footer />

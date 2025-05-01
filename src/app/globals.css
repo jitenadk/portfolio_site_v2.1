@@ -82,7 +82,8 @@
   /* Terminal/code text styling */
   .terminal-text {
     @apply font-mono;
-    color: #00ffa6;
+    /* color: #00ffa6; */
+    color: #17e98b
   }
 
   /* Neon glowing elements */

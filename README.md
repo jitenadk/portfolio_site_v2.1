@@ -1,15 +1,15 @@
-# jitendotexe Portfolio
+# [Jitendotexe Portfolio](https://jitenadhikari.com.np)
 
 This is the **source code** for my personal portfolio website.
 
 <p align="center">
-  <a href="https://your-site.azurestaticapps.net" target="_blank">
-    <img src="./img/project-preview/preview.png" alt="Site Preview" width="700" />
+  <a href="https://jitenadhikari.com.np" target="_blank">
+    <img src="./src/img/readme/site_preview.png" alt="Site Preview" width="700" />
   </a>
 </p>
 
 <p align="center">
-  <a href="https://your-site.azurestaticapps.net" target="_blank">Live Site</a> •
+  <a href="https://jitenadhikari.com.np" target="_blank">Live Site</a> •
   <a href="https://github.com/jitenadk/portfolio_site_v2.1" target="_blank">Source Code</a>
 </p>
 
@@ -30,8 +30,7 @@ This is the **source code** for my personal portfolio website.
 - [Design](#design)
   - [Fonts](#fonts)
   - [Color Scheme](#color-scheme)
-  - [Icon](#icon)
-- [Built With](#built-with)
+- [Tech I Used](#tech-i-used)
 - [Getting Started](#getting-started)
 - [Deployment (Azure)](#deployment-azure)
 - [Creator](#creator)
@@ -43,36 +42,28 @@ This is the **source code** for my personal portfolio website.
 
 ### Fonts
 
-- **Fira Code** – headings & code (via [Google Fonts](https://fonts.google.com/specimen/Fira+Code))
+- **Inter** – primary sans-serif font (via `next/font/google`)
 
-  <img alt="Fira Code Preview" src="./img/readme/fire-code.png" width="400" />
+  <img alt="Inter Preview" src="./src/img/readme/inter.png" width="400" />
 
-- **Nunito** – main text (via [Google Fonts](https://fonts.google.com/specimen/Nunito))
+- **Space Mono** – monospaced code font (via `next/font/google`)
 
-  <img alt="Nunito Preview" src="./img/readme/nunito.png" width="400" />
+  <img alt="Space Mono Preview" src="./src/img/readme/space_mono.png" width="400" />
 
 ### Color Scheme
 
-- White (#FFFFFF) – primary text
-- Oxford Blue (#1D263B) – background
-- Charm Pink (#F08CAE) – links, hover
-- Shamrock Green (#399E5A) – accent hover
-- Viridian Green (#0FA3B1) – section highlights
-- Slate Gray (#6B818C) – muted text
+- `--background`: #FAFAFA
+- `--foreground`: #0A0A0A
+- `--primary`: #17E9D1
+- `--accent`: #FF2DA0
+- `--cyber-green`: #17e98b
+- `--secondary`: #E5E7EB
+- `--muted`: #E5E7EB
+- `--destructive`: #F14A4A
+- `--border`/`--input`: #E4E7EF
+- `--ring`: #17E9D1
 
-<a href="https://coolors.co/ffffff-1d263b-f08cae-399e5a-0fa3b1-6b818c"><img alt="Color Palette" src="./img/readme/palette.png" width="600" /></a>
-
-### Icon
-
-Custom avatar icon used on Home & About pages.
-
-<em>Art by <a href="https://www.instagram.com/wynn.draws/" target="_blank">wynn.draws</a>.</em>
-
-<p align="center">
-  <img alt="Icon" src="./img/readme/me-icon.png" width="250" />
-  <img alt="Icon Smiling" src="./img/readme/me-icon-smiling.png" width="250" />
-  <img alt="Icon GIF" src="./img/readme/me-icon.gif" width="250" />
-</p>
+<a href="https://coolors.co/ffffff-0a0a0a-00ffd0-ff2da0-00ff6a-330000-f4f6fb-f4f6fb-f14a4a-e4e7ef-00ffd0"><img alt="Color Palette" src="./src/img/readme/color_palette.png" width="600" /></a>
 
 ---
 
@@ -121,21 +112,6 @@ Custom avatar icon used on Home & About pages.
 
 ---
 
-## Deployment (Azure)
-
-Deployed on **Azure Static Web Apps**. On push to `main`, Azure builds & deploys.
-
-Locally:
-
-```bash
-npm run build
-npm start
-```
-
-This serves the production build at [http://localhost:3000](http://localhost:3000).
-
----
-
 ## Creator
 
 **Jiten Adhikari**
@@ -152,6 +128,6 @@ Forks welcome—please update content & credits.
 
 ## License
 
-&copy; 2025–<script>document.write(new Date().getFullYear());</script> Jiten Adhikari
+&copy; 2024–<script>document.write(new Date().getFullYear());</script> Jiten Adhikari
 
 Licensed under the [MIT License](./LICENSE).
