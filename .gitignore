@@ -10,42 +10,133 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
 /coverage
 
-# next.js
+# Next.js
 /.next/
 /out/
 
-# production
+# Production
 /build
+/dist
 
-# misc
-.DS_Store
-*.pem
+# Environment files
+.env
+.env.local
+.env.*.local
 
-# debug
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
 
-# vercel
-.vercel
+# OS
+.DS_Store
+Thumbs.db
 
-# typescript
+# Editor
+*.sublime-workspace
+*.sublime-project
+
+# Build
+*.log
+*.lock
+*.tgz
+
+# TypeScript
 *.tsbuildinfo
 next-env.d.ts
 
-# Unnecessary files for GitHub deployment
-bun.lock
-components.json
-*.Zone.Identifier
-biome.json
-eslint.config.mjs
+# Vercel
+.vercel
 
-# Windows file metadata
-*:Zone.Identifier
+# Testing
+jest.config.js
+jest.setup.js
+
+# Cache
+.cache
+next-cache
+
+# Temp
+.temp
+*.tmp
+
+# Debug
+*.pid
+*.seed
+*.pid.lock
+
+# Misc
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+*.pfx
+
+# IDE specific
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/*
+!.idea/misc.xml
+!.idea/modules.xml
+!.idea/workspace.xml
+
+# Windows
+*.exe
+*.dll
+*.bat
+*.cmd
+*.vbs
+*.ps1
+*.psm1
+*.wsf
+*.wsh
+*.scf
+*.lnk
+*.url
+
+# macOS
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*.deb
+*.rpm
+*.tgz
+*.tar.gz
+*.tar.xz
+*.tar.bz2
+*.tar.lzma
+*.tar.lz4
+*.tar.zst
+*.tar.zstd
+*.tar.z
+*.tar.Z
+*.tar.gz
+*.tar.xz
+*.tar.bz2
+*.tar.lzma
+*.tar.lz4
+*.tar.zst
+*.tar.zstd
+*.tar.z
+*.tar.Z
