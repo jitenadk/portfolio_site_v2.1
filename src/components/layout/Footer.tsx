@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 text-center text-xs text-foreground/40">
-          <p>Designed with 💻 and ⚡ by jitendotexe</p>
+          <p>Designed with 💻 and ⚡ and lots of ☕ by jitendotexe</p>
         </div>
       </div>
     </footer>

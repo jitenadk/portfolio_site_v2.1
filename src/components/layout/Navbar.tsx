@@ -28,41 +28,51 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState<string>(pathname);
 
   useEffect(() => {
-    if (pathname !== "/") {
-      setActiveSection(pathname);
-      return;
-    }
-    const sectionElements = navigationItems
-      .filter(item => item.href.startsWith("/#"))
-      .map(item => document.getElementById(item.href.split("#")[1]))
-      .filter(Boolean) as HTMLElement[];
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id;
-          const hash = `#${id}`;
-          if (window.location.hash !== hash) {
-            window.history.replaceState(null, '', hash);
+    setActiveSection(pathname);
+
+    if (pathname === '/') {
+      const sectionElements = navigationItems
+        .filter(item => item.href.startsWith('/#'))
+        .map(item => document.getElementById(item.href.split("#")[1]))
+        .filter(Boolean) as HTMLElement[];
+
+      if (sectionElements.length === 0) return;
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            if (window.scrollY > 100) {
+              setActiveSection(`/#${id}`);
+            }
           }
-          setActiveSection(`/#${id}`);
-        }
-      });
-    }, { rootMargin: "0px 0px -50% 0px", threshold: 0.3 });
-    sectionElements.forEach(el => observer.observe(el));
-    return () => sectionElements.forEach(el => observer.unobserve(el));
+        });
+      }, { rootMargin: "-20% 0px -50% 0px", threshold: 0.1 });
+
+      sectionElements.forEach(el => observer.observe(el));
+
+      return () => {
+        sectionElements.forEach(el => observer.unobserve(el));
+      };
+    }
   }, [pathname]);
 
   useEffect(() => {
     if (pathname !== "/") return;
-    const handleTop = () => {
-      if (window.scrollY === 0) {
-        setActiveSection("/");
-        window.history.replaceState(null, '', window.location.pathname);
+
+    const handleTopScroll = () => {
+      if (window.scrollY < 100) {
+        if (activeSection !== "/") {
+          setActiveSection("/");
+        }
       }
     };
-    window.addEventListener("scroll", handleTop);
-    return () => window.removeEventListener("scroll", handleTop);
-  }, [pathname]);
+
+    window.addEventListener("scroll", handleTopScroll, { passive: true });
+    handleTopScroll();
+
+    return () => window.removeEventListener("scroll", handleTopScroll);
+  }, [pathname, activeSection]);
 
   useEffect(() => {
     const handleScroll = () => {

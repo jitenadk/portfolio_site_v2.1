@@ -4,12 +4,15 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { LINKS } from "@/config/links";
+import { Mail, Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import { FaFlickr } from "react-icons/fa";
+import { SiSteam } from "react-icons/si";
 
 const commands = [
   { id: "intro", text: "Interested in working together or just want to say hello?" },
   { id: "connect", text: "Connect with me via the form below or directly at:" },
   { id: "email", text: `Email: ${LINKS.email.replace(/^mailto:/, '')}` },
-  { id: "linkedin", text: `LinkedIn: ${LINKS.linkedin.replace(/^https?:\/\//, '')}` },
+  // { id: "linkedin", text: `LinkedIn: ${LINKS.linkedin.replace(/^https?:\/\//, '')}` },
 ];
 
 export default function ContactSection() {
@@ -109,24 +112,26 @@ export default function ContactSection() {
 
               <div className="border-t border-primary/10 pt-4">
                 <h3 className="text-lg font-semibold mb-4">Socials:</h3>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="flex space-x-6">
                   {[
-                    { name: "Email", url: LINKS.email },
-                    { name: "GitHub", url: LINKS.github },
-                    { name: "LinkedIn", url: LINKS.linkedin },
-                    { name: "Twitter", url: LINKS.twitter },
-                    { name: "Instagram", url: LINKS.instagram },
-                    { name: "Flickr", url: LINKS.flickr },
+                    { name: "Email", url: LINKS.email, icon: Mail },
+                    { name: "GitHub", url: LINKS.github, icon: Github },
+                    { name: "LinkedIn", url: LINKS.linkedin, icon: Linkedin },
+                    { name: "Twitter", url: LINKS.twitter, icon: Twitter },
+                    { name: "Instagram", url: LINKS.instagram, icon: Instagram },
+                    { name: "Flickr", url: LINKS.flickr, icon: FaFlickr },
+                    { name: "Steam", url: LINKS.steam, icon: SiSteam },
                   ].map((social) => (
-                    <div key={social.name} className="flex items-center space-x-2">
-                      <span className="text-primary">$</span>
-                      <div>
-                        <div className="font-medium">{social.name}</div>
-                        <a href={social.url} className="text-xs text-foreground/60 hover:underline" target="_blank" rel="noopener noreferrer">
-                          {social.url.replace(/^mailto:|https?:\/\//, "")}
-                        </a>
-                      </div>
-                    </div>
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      target={social.name === "Email" ? undefined : "_blank"}
+                      rel={social.name === "Email" ? undefined : "noopener noreferrer"}
+                      className="text-zinc-400 hover:text-primary transition-colors"
+                    >
+                      <social.icon className="w-6 h-6" />
+                      <span className="sr-only">{social.name}</span>
+                    </a>
                   ))}
                 </div>
               </div>

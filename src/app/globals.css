@@ -5,6 +5,7 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
+    --cyber-blue: 174, 100%, 50%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -260,4 +261,21 @@
   ::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--primary) / 0.5);
   }
+}
+
+/* Masonry Layout Styles */
+.my-masonry-grid {
+  display: flex;
+  margin-left: -1.5rem; /* negative gutter size (corresponds to gap-6) */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 1.5rem; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style items within the column */
+.my-masonry-grid_column > a {
+  display: block; /* Ensure anchor takes block space */
+  margin-bottom: 1.5rem; /* space between items */
 }

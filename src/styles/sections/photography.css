@@ -1,0 +1,36 @@
+/* Custom styles for the photo grid */
+.stack-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.stack-container > div {
+  transition: all 0.3s ease;
+  will-change: transform, box-shadow, opacity;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.stack-container > div:hover,
+.stack-container > div.z-30 {
+  box-shadow: 0 15px 50px 0 rgba(var(--cyber-blue), 0.2), 0 5px 20px 0 rgba(0,0,0,0.15);
+  outline: 2px solid rgba(var(--cyber-blue), 0.4);
+}
+
+
+
+/* Animation for the active card */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(var(--cyber-blue), 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(var(--cyber-blue), 0); }
+  100% { box-shadow: 0 0 0 0 rgba(var(--cyber-blue), 0); }
+}
+
+.active-card {
+  animation: pulse 2s infinite;
+}

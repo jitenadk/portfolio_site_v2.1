@@ -6,5 +6,5 @@ export const LINKS = {
   twitter: 'https://x.com/9_73N',
   instagram: 'https://www.instagram.com/jitendotexe/',
   flickr: 'https://www.flickr.com/people/196240129@N04/',
-  // Add more links as needed
+  steam: 'https://steamcommunity.com/id/0xlupin/',
 };

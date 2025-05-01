@@ -4,8 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
-import { Shield, Car, Camera, Compass, Code } from "lucide-react";
-
+import { Shield, Car, Camera, Compass, Code, Cpu, Gamepad2, Leaf } from "lucide-react";
 // Install framer-motion: bun add framer-motion
 
 const passions = [
@@ -38,6 +37,24 @@ const passions = [
     title: "Technology",
     description: "Staying on the cutting edge of tech trends and advancements.",
     icon: Code,
+  },
+  {
+    id: "mechatronics",
+    title: "Mechatronics",
+    description: "Designing and building drones, embedded systems, and robotics.",
+    icon: Cpu,
+  },
+  {
+    id: "gaming",
+    title: "Gaming",
+    description: "Enjoy playing video games, exploring virtual worlds, and strategizing challenges.",
+    icon: Gamepad2,
+  },
+  {
+    id: "plants",
+    title: "Plants",
+    description: "Caring for plants, botany enthusiast, and indoor gardening.",
+    icon: Leaf,
   },
 ];
 
@@ -84,23 +101,33 @@ export default function AboutSection() {
             <div className="cyber-card p-6">
               <div className="font-mono text-xs terminal-text mb-2">~/jitendotexe/about $ cat bio.md</div>
               <p className="text-lg mb-4">
-                Hello! I'm <span className="text-primary font-medium">Jiten Adhikari</span>, a cyber security engineer
-                with a passion for strengthening digital defenses and finding vulnerabilities before they become threats.
+                Hello! I'm <span className="text-primary font-medium">Jiten Adhikari</span>, a SOC Engineer at Thakral One Nepal
+                with a focus on cybersecurity and digital forensics.
               </p>
               <p className="mb-4">
-                With years of experience in network security, penetration testing, and security architecture, I work to ensure systems
-                remain protected in an ever-evolving threat landscape. My expertise extends to:
+                Currently working as a full-time SOC Engineer, I monitor security events and conduct analysis using SIEM tools to enhance system security.
+                Previously, I worked as a SOC Analyst intern where I assisted in threat detection and incident response using SIEM.
               </p>
-              <ul className="list-disc list-inside space-y-1 mb-4 ml-2">
-                <li>Vulnerability assessment and penetration testing</li>
-                <li>Security infrastructure design and implementation</li>
-                <li>Incident response and forensics</li>
-                <li>Compliance and risk management</li>
-              </ul>
+              <div className="mb-4">
+                <h3 className="font-semibold mb-2">Key Skills & Expertise:</h3>
+                <ul className="list-disc list-inside space-y-1 ml-2">
+                  <li>Programming: Python, C, C++, HTML, JavaScript</li>
+                  <li>Linux: Proficient in system administration and tools</li>
+                  <li>Offensive Security: Nmap, Metasploit, Hydra, John the Ripper, Burp Suite</li>
+                  <li>Defensive Security: Wireshark, Autopsy, SIEM (Qradar, Logpoint), Incident Response</li>
+                </ul>
+              </div>
+              <div className="mb-4">
+                <h3 className="font-semibold mb-2">Achievements & Certifications:</h3>
+                <ul className="list-disc list-inside space-y-1 ml-2">
+                  <li>Winner, TBC CyberSec Club CTF (2023)</li>
+                  <li>Digital Forensics Essentials (DFE), EC Council (2023)</li>
+                  <li>Network Defense Essentials (NDE), EC Council (2023)</li>
+                  <li>Ethical Hacking Essentials (EHE), EC Council (2022)</li>
+                </ul>
+              </div>
               <p>
-                Outside of my professional life, I'm an avid car and bike enthusiast, a photography hobbyist, and love exploring new
-                places through travel. These diverse interests help me maintain a well-rounded perspective that enhances my security
-                work.
+                I've also contributed as a Linux Bootcamp Instructor, teaching system administration to over 30 participants, and actively participate in CTF competitions to enhance my cybersecurity skills.
               </p>
             </div>
           </motion.div>
@@ -116,8 +143,8 @@ export default function AboutSection() {
               <AvatarFallback className="text-5xl bg-zinc-800">JA</AvatarFallback>
             </Avatar>
 
-            <div className="w-full max-w-sm">
-              <div className="flex justify-between mb-2">
+            <div className="w-full max-w-md">
+              <div className="flex justify-between space-x-4 mb-2">
                 {passions.map((passion, index) => (
                   <button
                     key={passion.id}
