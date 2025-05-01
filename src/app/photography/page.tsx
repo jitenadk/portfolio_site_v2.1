@@ -29,9 +29,9 @@ export default function PhotographyPage() {
         <Link href="/" className="inline-flex items-center text-sm text-foreground/70 hover:text-primary transition-colors mb-6">
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Home
         </Link>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Photography</h1>
-        <p className="text-lg text-foreground/70 mb-8">A curated showcase of my best shots spanning nature, travel, and moments.</p>
-        <p className="text-lg text-foreground/70 mb-8">This page is under maintenance</p>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">Photography</h1>
+        <p className="text-lg text-foreground/70 mb-8 text-center">A curated showcase of my best shots spanning nature, travel, and moments.</p>
+        <p className="text-lg text-foreground/70 mb-8 text-center">This page is under maintenance</p>
 
         <Masonry
           breakpointCols={breakpointColumnsObj}

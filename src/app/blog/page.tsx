@@ -27,8 +27,8 @@ export default function BlogPage() {
           Back to Home
         </Link>
 
-        <h1 className="text-4xl md:text-5xl font-bold mb-8">Blog</h1>
-        <p className="text-xl text-foreground/70 mb-8">
+        <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">Blog</h1>
+        <p className="text-xl text-foreground/70 mb-8 text-center">
           Thoughts and articles about cybersecurity, travel, photography, and
           automotive topics.
         </p>
