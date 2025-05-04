@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogClose} from "@/components/ui/dialog";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -130,6 +130,11 @@ export default function PhotographySection() {
                   </DialogTrigger>
                   <DialogContent className="max-w-4xl bg-background/95 backdrop-blur-lg border border-primary/20">
                     <DialogTitle className="sr-only">{item.title}</DialogTitle>
+                    <DialogClose asChild>
+                    <button className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition">
+                      Close
+                    </button>
+                  </DialogClose>
                     <div className="p-1">
                       <div className="relative aspect-[16/9] w-full">
                         <div className="absolute inset-0 flex items-center justify-center bg-zinc-900 text-zinc-700">

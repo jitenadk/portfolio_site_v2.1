@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Car, Camera, Compass, Code, Cpu, Gamepad2, Leaf } from "lucide-react";
+import SectionHeader from "@/components/ui/SectionHeader";
 // Install framer-motion: bun add framer-motion
 
 const passions = [
@@ -84,11 +85,7 @@ export default function AboutSection() {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <span className="inline-block font-mono text-primary text-sm mb-3">
-            &lt;about me /&gt;
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Who Am I?</h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
+          <SectionHeader upperText="&lt;about me /&gt;" title="Who Am I?" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">

@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { ExternalLink, Github, Shield, Network, Globe, Database } from "lucide-react";
 import Link from "next/link";
 import { LINKS } from "@/config/links";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 const projects = [
   {
@@ -55,11 +56,7 @@ export default function ProjectsSection() {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <span className="inline-block font-mono text-primary text-sm mb-3">
-            &lt;featured work /&gt;
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
+          <SectionHeader upperText="&lt;featured work /&gt;" title="Projects" />
         </motion.div>
 
         <div className="cyber-card p-6 mb-10">

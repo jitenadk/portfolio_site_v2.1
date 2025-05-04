@@ -15,8 +15,8 @@ import { cn } from "@/lib/utils";
 const navigationItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/#about" },
-  { name: "Projects", href: "/#projects" },
   // { name: "Skills", href: "/#skills" },
+  { name: "Projects", href: "/#projects" },
   { name: "Photography", href: "/photography" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/#contact" },
@@ -31,12 +31,10 @@ export default function Navbar() {
     setActiveSection(pathname);
 
     if (pathname === '/') {
-      const sectionElements = navigationItems
-        .filter(item => item.href.startsWith('/#'))
-        .map(item => document.getElementById(item.href.split("#")[1]))
-        .filter(Boolean) as HTMLElement[];
-
-      if (sectionElements.length === 0) return;
+      // Auto-detect all sections with IDs on the page
+      const allSections = Array.from(document.querySelectorAll('section[id]')) as HTMLElement[];
+      
+      if (allSections.length === 0) return;
 
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -44,15 +42,23 @@ export default function Navbar() {
             const id = entry.target.id;
             if (window.scrollY > 100) {
               setActiveSection(`/#${id}`);
+              // Update URL to reflect current section
+              window.history.replaceState(null, '', `/#${id}`);
+              
+              // Also update active nav item if this section is in the navbar
+              const navItem = navigationItems.find(item => item.href === `/#${id}`);
+              if (navItem) {
+                setActiveSection(`/#${id}`);
+              }
             }
           }
         });
       }, { rootMargin: "-20% 0px -50% 0px", threshold: 0.1 });
 
-      sectionElements.forEach(el => observer.observe(el));
+      allSections.forEach(el => observer.observe(el));
 
       return () => {
-        sectionElements.forEach(el => observer.unobserve(el));
+        allSections.forEach(el => observer.unobserve(el));
       };
     }
   }, [pathname]);
@@ -64,6 +70,7 @@ export default function Navbar() {
       if (window.scrollY < 100) {
         if (activeSection !== "/") {
           setActiveSection("/");
+          window.history.replaceState(null, '', '/');
         }
       }
     };
@@ -77,11 +84,37 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      
+      // Update URL when scrolling
+      if (pathname === '/') {
+        // Auto-detect all sections with IDs
+        const allSections = Array.from(document.querySelectorAll('section[id]')) as HTMLElement[];
+        
+        // Sort sections by their position in the document
+        // This ensures we highlight the most relevant section when multiple are visible
+        const sortedSections = allSections.sort((a, b) => {
+          const aRect = a.getBoundingClientRect();
+          const bRect = b.getBoundingClientRect();
+          return Math.abs(aRect.top) - Math.abs(bRect.top);
+        });
+        
+        // Find the first visible section
+        const visibleSection = sortedSections.find(el => {
+          const rect = el.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        });
+        
+        if (visibleSection) {
+          const id = visibleSection.id;
+          setActiveSection(`/#${id}`);
+          window.history.replaceState(null, '', `/#${id}`);
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   return (
     <header

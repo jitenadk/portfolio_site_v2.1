@@ -7,6 +7,7 @@ import { LINKS } from "@/config/links";
 import { Mail, Github, Linkedin, Twitter, Instagram } from "lucide-react";
 import { FaFlickr } from "react-icons/fa";
 import { SiSteam } from "react-icons/si";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 const commands = [
   { id: "intro", text: "Interested in working together or just want to say hello?" },
@@ -79,11 +80,7 @@ export default function ContactSection() {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <span className="inline-block font-mono text-primary text-sm mb-3">
-            &lt;get in touch /&gt;
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact</h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
+          <SectionHeader upperText="&lt;get in touch /&gt;" title="Contact" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">

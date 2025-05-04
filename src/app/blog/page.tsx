@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { formatDate } from "@/lib/utils";
 import { getSortedPostsData } from "@/lib/blog";
+import SectionHeader from '@/components/ui/SectionHeader';
 
 // Removed CSS import, inlining Tailwind for blog layout
 
@@ -27,7 +28,7 @@ export default function BlogPage() {
           Back to Home
         </Link>
 
-        <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">Blog</h1>
+        <SectionHeader upperText="&lt;featured posts /&gt;" title="Blog" />
         <p className="text-xl text-foreground/70 mb-8 text-center">
           Thoughts and articles about cybersecurity, travel, photography, and
           automotive topics.

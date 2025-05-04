@@ -18,9 +18,74 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "jitendotexe",
-  description: "Portfolio of Jiten Adhikari - Cyber Security Engineer, Travel & Automotive Enthusiast, Photographerrrrrrrr",
-  icons: { icon: '/favicon.svg' },
+  metadataBase: new URL('https://jitenadhikari.com.np'),
+  title: "jitendotexe | Cyber Security Engineer & Developer",
+  description: "Portfolio of Jiten Adhikari - Cyber Security Engineer, Full Stack Developer, Travel & Automotive Enthusiast, and Photographer. Specializing in web security, penetration testing, and modern web development.",
+  authors: [{ name: "Jiten Adhikari", url: "https://jitenadhikari.com.np" }],
+  generator: "Next.js",
+  applicationName: "Jiten Adhikari Portfolio",
+  keywords: ["Jiten Adhikari", "Cyber Security", "Web Development", "Full Stack Developer", "Portfolio", "Security Engineer", "Photography", "Travel", "Automotive"],
+  creator: "Jitendotexe",
+  publisher: "Jitendotexe",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  
+  // Robots & Indexing
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  
+  // Open Graph
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://jitenadhikari.com.np",
+    title: "jitendotexe | Cyber Security Engineer & Developer",
+    description: "Portfolio of Jiten Adhikari - Cyber Security Engineer, Full Stack Developer, Travel & Automotive Enthusiast, and Photographer. Specializing in web security, penetration testing, and modern web development.",
+    siteName: "Jiten Adhikari Portfolio",
+    images: [{
+      url: '/og-image.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Jiten Adhikari Portfolio',
+    }],
+  },
+  
+  // Twitter
+  twitter: {
+    card: 'summary_large_image',
+    title: "jitendotexe | Cyber Security Engineer & Developer",
+    description: "Portfolio of Jiten Adhikari - Cyber Security Engineer, Full Stack Developer, Travel & Automotive Enthusiast, and Photographer.",
+    images: ['/og-image.jpg'],
+    creator: '@jitendotexe',
+  },
+  
+  icons: { 
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    // apple: '/apple-touch-icon.png',
+  },
+  
+  // Verification
+  verification: {
+    google: 'your-google-site-verification', // Add your Google verification code
+  },
+  
+  // Additional metadata
+  category: 'technology',
+  classification: 'Portfolio Website',
+  referrer: 'origin-when-cross-origin',
 };
 
 export default function RootLayout({
