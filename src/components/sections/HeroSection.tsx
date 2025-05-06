@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, Camera, Book } from "lucide-react";
 
 export default function HeroSection() {
   const [typingComplete, setTypingComplete] = useState(false);
@@ -73,7 +73,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 mt-8">
+        <div className="flex flex-col sm:flex-row gap-4 mt-8 flex-wrap">
           <Button asChild className="group text-background" size="lg">
             <Link href="/#projects">
               View My Work
@@ -82,6 +82,23 @@ export default function HeroSection() {
           </Button>
           <Button asChild variant="outline" size="lg">
             <Link href="/#contact">Contact Me</Link>
+          </Button>
+        </div>
+        
+        <div className="flex flex-col sm:flex-row gap-4 mt-4">
+          <Button asChild variant="ghost" size="sm" className="group border border-primary/20 hover:bg-primary/5">
+            <Link href="/photography" className="flex items-center gap-2">
+              <Camera className="h-4 w-4" />
+              Photography
+              <ArrowRight className="ml-1 h-3 w-3 opacity-70 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </Button>
+          <Button asChild variant="ghost" size="sm" className="group border border-primary/20 hover:bg-primary/5">
+            <Link href="/blog" className="flex items-center gap-2">
+              <Book className="h-4 w-4" />
+              Blog
+              <ArrowRight className="ml-1 h-3 w-3 opacity-70 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </Button>
         </div>
       </div>

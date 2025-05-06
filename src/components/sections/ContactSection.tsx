@@ -12,7 +12,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 const commands = [
   { id: "intro", text: "Interested in working together or just want to say hello?" },
   { id: "connect", text: "Connect with me via the form below or directly at:" },
-  { id: "email", text: `Email: ${LINKS.email.replace(/^mailto:/, '')}` },
+  { id: "email", text: `Email:${LINKS.email.replace(/^mailto:/, '')}` },
   // { id: "linkedin", text: `LinkedIn: ${LINKS.linkedin.replace(/^https?:\/\//, '')}` },
 ];
 
@@ -109,7 +109,7 @@ export default function ContactSection() {
 
               <div className="border-t border-primary/10 pt-4">
                 <h3 className="text-lg font-semibold mb-4">Socials:</h3>
-                <div className="flex space-x-6">
+                <div className="flex flex-wrap gap-10 justify-center">
                   {[
                     { name: "Email", url: LINKS.email, icon: Mail },
                     { name: "GitHub", url: LINKS.github, icon: Github },
@@ -124,10 +124,11 @@ export default function ContactSection() {
                       href={social.url}
                       target={social.name === "Email" ? undefined : "_blank"}
                       rel={social.name === "Email" ? undefined : "noopener noreferrer"}
-                      className="text-zinc-400 hover:text-primary transition-colors"
+                      className="text-zinc-400 hover:text-primary transition-colors flex flex-col items-center gap-2 group"
                     >
-                      <social.icon className="w-6 h-6" />
+                      <social.icon className="w-7 h-7 group-hover:scale-110 transition-transform" />
                       <span className="sr-only">{social.name}</span>
+                      <div className="text-xs group-hover:underline font-normal">{social.name}</div>
                     </a>
                   ))}
                 </div>

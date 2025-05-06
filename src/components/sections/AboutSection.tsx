@@ -97,38 +97,31 @@ export default function AboutSection() {
           >
             <div className="cyber-card p-6">
               <div className="font-mono text-xs terminal-text mb-2">~/jitendotexe/about $ cat bio.md</div>
-              <p className="text-lg mb-4">
-                Hello! I'm <span className="text-primary font-medium">Jiten Adhikari</span>, a SOC Engineer at Thakral One Nepal
-                with a focus on cybersecurity and digital forensics.
+              
+              <p className="font-bold">👋Hello! </p> 
+              <p className="text-lg mb-4">I'm <span className="text-primary font-medium">Jiten Adhikari</span>, a self-taught penetration tester and cybersecurity enthusiast 
+              based in Kathmandu, Nepal.  I’m drawn to systems — how they work, how they break, and how to fix them better than before. 
               </p>
+              
               <p className="mb-4">
-                Currently working as a full-time SOC Engineer, I monitor security events and conduct analysis using SIEM tools to enhance system security.
-                Previously, I worked as a SOC Analyst intern where I assisted in threat detection and incident response using SIEM.
+                <p className="font-bold mb-2">💻 How I Work</p>
+                I like keeping things clean — from code to workspaces. If I know what I'm doing, I prefer working solo or guiding others; if not, I'll gladly learn from those who know more. 
+                I don't rush, but I don't like wasting time either. Everything has its place — and I'll fix it if it doesn't.
               </p>
-              <div className="mb-4">
-                <h3 className="font-semibold mb-2">Key Skills & Expertise:</h3>
-                <ul className="list-disc list-inside space-y-1 ml-2">
-                  <li>Programming: Python, C, C++, HTML, JavaScript</li>
-                  <li>Linux: Proficient in system administration and tools</li>
-                  <li>Offensive Security: Nmap, Metasploit, Hydra, John the Ripper, Burp Suite</li>
-                  <li>Defensive Security: Wireshark, Autopsy, SIEM (Qradar, Logpoint), Incident Response</li>
-                </ul>
-              </div>
-              <div className="mb-4">
-                <h3 className="font-semibold mb-2">Achievements & Certifications:</h3>
-                <ul className="list-disc list-inside space-y-1 ml-2">
-                  <li>Winner, TBC CyberSec Club CTF (2023)</li>
-                  <li>Digital Forensics Essentials (DFE), EC Council (2023)</li>
-                  <li>Network Defense Essentials (NDE), EC Council (2023)</li>
-                  <li>Ethical Hacking Essentials (EHE), EC Council (2022)</li>
-                </ul>
-              </div>
-              <p>
-                I've also contributed as a Linux Bootcamp Instructor, teaching system administration to over 30 participants, and actively participate in CTF competitions to enhance my cybersecurity skills.
+              
+              <p className="mb-4">
+                <p className="font-bold mb-2">🔧 What I Enjoy</p>
+                On screen, I tinker with side projects, play all kinds of games, and try to write (still working on that blog). 
+                Off screen, I ride, drive, hike, and quietly enjoy rainy nights. I like calm weather, watching planes take off, peeling electronics apart, and just... figuring things out.
+              </p>
+              
+              <p className="mb-4">
+                <p className="font-bold mb-2">🚗 When I'm Off Screen</p>
+                If there's no screen, there's probably a road. I'll spend the day traveling, exploring, or just with family. 
+                I'm not the kind to sit still for long — unless I'm deep into a project or lost in classic music.
               </p>
             </div>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
