@@ -74,15 +74,16 @@ export const metadata: Metadata = {
   icons: { 
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
-    // apple: '/apple-touch-icon.png',
+    // apple: '/apple-touch-icon.png',  
   },
   
   // Verification
   verification: {
-    google: 'your-google-site-verification', // Add your Google verification code
+    google: 'google4972bfbd3d6adece', // Add your Google verification code
   },
   
   // Additional metadata
+  
   category: 'technology',
   classification: 'Portfolio Website',
   referrer: 'origin-when-cross-origin',

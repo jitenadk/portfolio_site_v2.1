@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { Home, BookOpen, Camera } from 'lucide-react';
 
-// Blinking cursor animation
 const cursorStyle = {
   animation: 'blink 1s steps(2, start) infinite',
 };

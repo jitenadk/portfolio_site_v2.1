@@ -7,6 +7,7 @@ YELLOW='\033[0;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
+
 # Log functions
 log_info() {
   echo -e "${BLUE}ℹ️ INFO:${NC} $1"

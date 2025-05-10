@@ -10,12 +10,10 @@ export default function HeroSection() {
   const [visibleLines, setVisibleLines] = useState(0);
 
   useEffect(() => {
-    // Simulate typing animation for command prompt
     const timer = setTimeout(() => {
       setTypingComplete(true);
     }, 1000);
 
-    // Simulate multiple lines being printed
     const lineTimer = setInterval(() => {
       setVisibleLines((prev) => {
         if (prev >= 3) {

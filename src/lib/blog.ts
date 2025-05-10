@@ -2,7 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
-import html from 'remark-html';
+import remarkRehype from 'remark-rehype';
+import rehypeRaw from 'rehype-raw';
+import rehypeStringify from 'rehype-stringify';
 
 // Define the structure for blog post metadata (frontmatter)
 export interface PostMetadata {
@@ -10,23 +12,28 @@ export interface PostMetadata {
   date: string; // Keep as string for simplicity, parsing/formatting can happen in components
   summary: string;
   tags?: string[];
+  featuredImage?: string; // Path to the featured image
+  imageAlt?: string; // Alt text for the featured image
   // Add other metadata fields as needed
 }
 
 // Define the structure for a full blog post, including slug and content
+// MDX imports are handled by next-mdx-remote/rsc in the page component
+
 export interface PostData extends PostMetadata {
   slug: string;
   content: string;
 }
 
 const postsDirectory = path.join(process.cwd(), 'src/content/blog');
+const supportedExtensions = ['.md'];
 
 // Function to get all post slugs (filenames without .md extension)
 export function getAllPostSlugs(): string[] {
   try {
     const fileNames = fs.readdirSync(postsDirectory);
     return fileNames
-      .filter(fileName => fileName.endsWith('.md')) // Ensure we only process markdown files
+      .filter(fileName => supportedExtensions.some(ext => fileName.endsWith(ext)))
       .map(fileName => fileName.replace(/\.md$/, ''));
   } catch (error) {
     console.error("Error reading posts directory:", postsDirectory, error);
@@ -36,38 +43,36 @@ export function getAllPostSlugs(): string[] {
 
 // Function to get data for a single post by slug
 export async function getPostData(slug: string): Promise<PostData | null> {
-  const fullPath = path.join(postsDirectory, `${slug}.md`);
-  try {
-    if (!fs.existsSync(fullPath)) {
-      console.warn(`Post file not found for slug: ${slug} at path: ${fullPath}`);
-      return null;
-    }
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-
-    // Use gray-matter to parse the post metadata section
-    const { data, content: markdownContent } = matter(fileContents);
-
-    // Process markdown to HTML
-    const processedContent = await remark()
-      .use(html)
-      .process(markdownContent);
-    const contentHtml = processedContent.toString();
-
-    // Map frontmatter: use excerpt if present for summary
-    const fm = data as any;
-    const metadata: PostMetadata = {
-      title: fm.title,
-      date: fm.date,
-      summary: fm.excerpt ?? fm.summary,
-      tags: fm.tags,
-    };
-
-    // Combine the data with the slug and content
-    return { slug, ...metadata, content: contentHtml };
-  } catch (error) {
-    console.error(`Error reading post data for slug: ${slug}`, error);
-    return null; // Return null on error
+  const mdPath = path.join(postsDirectory, `${slug}.md`);
+  if (!fs.existsSync(mdPath)) {
+    console.warn(`Post file not found for slug: ${slug}`);
+    return null;
   }
+  const fileContents = fs.readFileSync(mdPath, 'utf8');
+
+  // Use gray-matter to parse the post metadata section
+  const { data, content: rawContent } = matter(fileContents);
+
+  // Map frontmatter: use excerpt if present for summary
+  const fm = data as any;
+  const metadata: PostMetadata = {
+    title: fm.title,
+    date: fm.date,
+    summary: fm.excerpt ?? fm.summary,
+    tags: fm.tags,
+    featuredImage: fm.featuredImage,
+    imageAlt: fm.imageAlt || fm.title,
+  };
+
+  // For MD, process markdown to HTML
+  const processedContent = await remark()
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypeStringify)
+    .process(rawContent);
+  const contentHtml = processedContent.toString();
+  return { slug, ...metadata, content: contentHtml };
+
 }
 
 // Alias to support old name
@@ -90,6 +95,8 @@ export function getSortedPostsData(): Omit<PostData, 'content'>[] {
           date: fm.date,
           summary: fm.excerpt ?? fm.summary,
           tags: fm.tags,
+          featuredImage: fm.featuredImage,
+          imageAlt: fm.imageAlt || fm.title,
         };
         return { slug, ...metadata }; // Only return metadata and slug
       } catch (error) {

@@ -4,7 +4,7 @@ This is the **source code** for my personal portfolio website.
 
 <p align="center">
   <a href="https://jitenadhikari.com.np" target="_blank">
-    <img src="./src/img/readme/site_preview.png" alt="Site Preview" width="700" />
+    <img src="./public/img/readme/site_preview.png" alt="Site Preview" width="700" />
   </a>
 </p>
 
@@ -44,12 +44,12 @@ This is the **source code** for my personal portfolio website.
 
 - **Inter** – primary sans-serif font (via `next/font/google`)
     <p align="center">
-      <img alt="Inter Preview" src="./src/img/readme/inter.png" />
+      <img alt="Inter Preview" src="./public/img/readme/inter.png" />
     </p>
 
 - **Space Mono** – monospaced code font (via `next/font/google`)
     <p align="center">
-      <img alt="Space Mono Preview" src="./src/img/readme/space_mono.png" />
+      <img alt="Space Mono Preview" src="./public/img/readme/space_mono.png" />
     </p>
 
 ### Color Scheme
@@ -65,7 +65,7 @@ This is the **source code** for my personal portfolio website.
 - `--border`/`--input`: #E4E7EF
 - `--ring`: #17E9D1
 <p align="center">
-    <a href="https://coolors.co/fafafa-0a0a0a-17e9d1-ff2da0-17e98b-e5e7eb-f14a4a" target="_blank"><img alt="Color Palette" src="./src/img/readme/color_palette.png"/></a>
+    <a href="https://coolors.co/fafafa-0a0a0a-17e9d1-ff2da0-17e98b-e5e7eb-f14a4a" target="_blank"><img alt="Color Palette" src="./public/img/readme/color_palette.png"/></a>
 </p>
 
 ---

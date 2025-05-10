@@ -122,8 +122,7 @@ export default function PhotographySection() {
 
                       <div className="w-full h-full bg-zinc-900 relative">
                         <div className="absolute inset-0 flex items-center justify-center text-zinc-700">
-                          {/* Placeholder for when image isn't available */}
-                          <span className="font-mono text-sm">Image {index + 1}</span>
+                          {/* Placeholder for when image isn't available */}                          <span className="font-mono text-sm">Image {index + 1}</span>
                         </div>
                       </div>
                     </div>

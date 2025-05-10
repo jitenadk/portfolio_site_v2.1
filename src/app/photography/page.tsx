@@ -2,7 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowLeft, Maximize2, Info, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, Maximize2, Info, ChevronLeft, ChevronRight, Instagram  } from "lucide-react";
 import Masonry from 'react-masonry-css';
 import SectionHeader from '@/components/ui/SectionHeader';
 import { motion, useInView } from "framer-motion";
@@ -16,6 +16,9 @@ import {
   DialogFooter,
   DialogClose
 } from "@/components/ui/dialog";
+import { link } from "fs";
+import { LINKS } from "@/config/links";
+import { FaFlickr } from "react-icons/fa";
 
 const photos = [
   { id: "1", 
@@ -125,7 +128,26 @@ export default function PhotographyPage() {
         >
           <SectionHeader upperText="&lt;captured moments /&gt;" title="Photography" />
         </motion.div>
-        <p className="text-lg text-foreground/70 mb-8 text-center">A curated showcase of my best shots spanning nature, travel, and moments.</p>
+        <p className="text-lg text-foreground/70 mb-2 text-center">A curated showcase of my best shots spanning nature, travel, and moments that I haven taken over the years.</p>
+        <p className="text-lg text-foreground/70 mb-8 flex justify-center gap-1">You can find more on 
+          <Link
+            href={LINKS.photo_instagram}
+            className="hover:underline text-foreground/80 text-primary hover:transition-colors hover:scale-105 flex items-center gap-0.5"
+            target="_blank"
+          >
+            <Instagram className="h-5 w-5" />
+              Instagram
+          </Link>
+          or
+          <Link
+            href={LINKS.flickr}
+            className="hover:underline text-foreground/80 text-primary hover:transition-colors hover:scale-105 flex items-center gap-0.5"
+            target="_blank"
+          >
+            <FaFlickr className="h-5 w-5" />
+              Flickr
+          </Link>
+        </p>
 
         {/* Image Modal */}
         <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>

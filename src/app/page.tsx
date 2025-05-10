@@ -12,7 +12,7 @@ export default function Home() {
       <AboutSection />
       {/* <SkillsSection /> */}
       <ProjectsSection />
-      {/* <PhotographySection /> */}
+      {/* <PhotographySection /> */}      
       <ContactSection />
     </div>
   );

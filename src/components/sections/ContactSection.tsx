@@ -13,7 +13,6 @@ const commands = [
   { id: "intro", text: "Interested in working together or just want to say hello?" },
   { id: "connect", text: "Connect with me via the form below or directly at:" },
   { id: "email", text: `Email:${LINKS.email.replace(/^mailto:/, '')}` },
-  // { id: "linkedin", text: `LinkedIn: ${LINKS.linkedin.replace(/^https?:\/\//, '')}` },
 ];
 
 export default function ContactSection() {

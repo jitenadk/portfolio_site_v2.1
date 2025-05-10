@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { MenuIcon, X } from "lucide-react";
+import { MenuIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -146,24 +146,24 @@ export default function Navbar() {
 
         {/* Desktop navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {navigationItems.map(item => {
-            const isActive = item.href === activeSection;
-            return (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={cn(
-                  "font-mono text-sm transform transition duration-200 inline-block",
-                  isActive
-                    ? "text-primary neon-glow scale-105"
-                    : "text-foreground/70 hover:text-primary hover:neon-glow hover:scale-105"
-                )}
-              >
-                {item.name}
-              </Link>
-            );
-          })}
-        </nav>
+            {navigationItems.map(item => {
+              const isActive = item.href === activeSection;
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    "font-mono text-sm transform transition duration-200 inline-block",
+                    isActive
+                      ? "text-primary neon-glow scale-105"
+                      : "text-foreground/70 hover:text-primary hover:neon-glow hover:scale-105"
+                  )}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
+          </nav>
 
         {/* Mobile navigation */}
         <div className="md:hidden">

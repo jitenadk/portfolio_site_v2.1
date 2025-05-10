@@ -1,25 +1,21 @@
 ---
 title: My Portfolio Website
 date: '2025-05-06'
-excerpt: Learn how to set up a secure home network with advanced router configurations, VLANs, and proper encryption protocols.
+summary: Learn how to set up a secure home network with advanced router configurations, VLANs, and proper encryption protocols.
 tags: ['Portfolio', 'Next.js', 'Tailwind CSS', 'TypeScript', 'Azure Static Web Apps']
+imageAlt: 'Portfolio Website Preview'
+featuredImage: '/img/readme/site_preview.png'
 ---
 # [Jitendotexe Portfolio](https://jitenadhikari.com.np)
 
 This is the **source code** for my personal portfolio website.
 
-<p align="center">
-  <a href="https://jitenadhikari.com.np" target="_blank">
-    <img src="../../img/readme/site_preview.png" alt="Site Preview" width="700" />
-  </a>
-</p>
-
-<p align="center">
+<p className="center">
   <a href="https://jitenadhikari.com.np" target="_blank">Live Site</a> •
   <a href="https://github.com/jitenadk/portfolio_site_v2.1" target="_blank">Source Code</a>
 </p>
 
-<p align="center">
+<p className="justify-center flex gap-2">
   <img alt="HTML5" src="https://img.shields.io/badge/HTML5-E44D26?style=flat&logo=html5&logoColor=white" />
   <img alt="CSS3" src="https://img.shields.io/badge/CSS3-2965f1?style=flat&logo=css3&logoColor=white" />
   <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F0DB4F?style=flat&logo=javascript&logoColor=white" />
@@ -50,12 +46,12 @@ This is the **source code** for my personal portfolio website.
 
 - **Inter** – primary sans-serif font (via `next/font/google`)
     <p align="center">
-      <img alt="Inter Preview" src="./src/img/readme/inter.png" />
+      <img alt="Inter Preview" src="/img/readme/inter.png"/>
     </p>
 
 - **Space Mono** – monospaced code font (via `next/font/google`)
     <p align="center">
-      <img alt="Space Mono Preview" src="./src/img/readme/space_mono.png" />
+      <img alt="Space Mono Preview" src="/img/readme/space_mono.png" />
     </p>
 
 ### Color Scheme
@@ -70,8 +66,8 @@ This is the **source code** for my personal portfolio website.
 - `--destructive`: #F14A4A
 - `--border`/`--input`: #E4E7EF
 - `--ring`: #17E9D1
-<p align="center">
-    <a href="https://coolors.co/fafafa-0a0a0a-17e9d1-ff2da0-17e98b-e5e7eb-f14a4a" target="_blank"><img alt="Color Palette" src="./src/img/readme/color_palette.png"/></a>
+<p className="justify-center flex gap-2">
+    <a href="https://coolors.co/fafafa-0a0a0a-17e9d1-ff2da0-17e98b-e5e7eb-f14a4a" target="_blank"><img alt="Color Palette" src="/img/readme/color_palette.png"/></a>
 </p>
 
 ---
@@ -91,7 +87,6 @@ This is the **source code** for my personal portfolio website.
 - **Azure Static Web App**
 - **Caddy Web Server**
 - **Git**
-
 ---
 
 ## Getting Started
@@ -125,7 +120,7 @@ This is the **source code** for my personal portfolio website.
 
 **Jiten Adhikari**
 
-<p align="left">
+<p className="justify-left flex gap-2">
   <a href="mailto:jitenadhikari001@gmail.com"><img alt="Gmail" src="https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white" /></a>
   <a href="https://github.com/jitenadk" target="_blank"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" /></a>
   <a href="https://www.linkedin.com/in/jitenadk/" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white" /></a>
@@ -137,6 +132,7 @@ Forks welcome—please update content & credits.
 
 ## License
 
-&copy; 2024–<script>document.write(new Date().getFullYear());</script> Jiten Adhikari
+&copy; 2024–2025 Jiten Adhikari
+{/* <!-- &copy; 2024–<script>document.write(new Date().getFullYear());</script> Jiten Adhikari --> */}
 
-Licensed under the [MIT License](./LICENSE).
+Licensed under the [MIT License](/LICENSE).

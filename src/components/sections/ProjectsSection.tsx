@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink, Github, Shield, Network, Globe, Database } from "lucide-react";
+import { ExternalLink, Github, Shield, Network, Globe, Database, MapIcon } from "lucide-react";
 import Link from "next/link";
 import { LINKS } from "@/config/links";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -41,6 +41,14 @@ const projects = [
     link: `${LINKS.github}/SQLShield`,
     icon: Database,
   },
+  {
+    id: "cvemap",
+    title: "CVEMap",
+    description: "A toolt that scan the network devices and scan for vulnerability, which keeps runs on the network.",
+    tags: ["Python", "SQL"],
+    link: `${LINKS.github}/CVEMap`,
+    icon: MapIcon,
+  }
 ];
 
 export default function ProjectsSection() {
@@ -62,7 +70,7 @@ export default function ProjectsSection() {
         <div className="cyber-card p-6 mb-10">
           <div className="font-mono text-xs terminal-text mb-6">~/jitendotexe/projects $ ls -la | grep featured</div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 center">
             {projects.map((project, index) => (
               <motion.div
                 key={project.id}

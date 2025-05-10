@@ -1,8 +1,9 @@
 ---
 title: Setting Up a Secure Home Network
 date: '2023-05-15'
-excerpt: Learn how to set up a secure home network with advanced router configurations, VLANs, and proper encryption protocols.
+summary: Learn how to set up a secure home network with advanced router configurations, VLANs, and proper encryption protocols.
 tags: ['Security', 'Networking', 'Home Setup']
+featuredImage: 'https://store.hp.com/app/assets/images/uploads/prod/how-to-set-up-a-router-hero1548103839353.jpg'
 ---
 
 ## Introduction
@@ -26,6 +27,10 @@ Network segmentation is crucial for security. I recommend creating at least thre
 - IoT network for smart home devices
 - Guest network for visitors
 
+<p align="center">
+    <a href="https://coolors.co/fafafa-0a0a0a-17e9d1-ff2da0-17e98b-e5e7eb-f14a4a" target="_blank"><img alt="Color Palette" src="https://store.hp.com/app/assets/images/uploads/prod/how-to-set-up-a-router-hero1548103839353.jpg"/></a>
+</p>
+
 ## Firewall Rules
 
 Implement strict firewall rules to control traffic between VLANs. This prevents compromised devices from affecting your entire network.
@@ -33,3 +38,5 @@ Implement strict firewall rules to control traffic between VLANs. This prevents 
 ## Conclusion
 
 Following these steps will significantly improve your home network security. In my next post, I'll cover advanced monitoring techniques.
+
+## Reference

@@ -6,7 +6,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Car, Camera, Compass, Code, Cpu, Gamepad2, Leaf } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
-// Install framer-motion: bun add framer-motion
 
 const passions = [
   {
@@ -100,25 +99,22 @@ export default function AboutSection() {
               
               <p className="font-bold">👋Hello! </p> 
               <p className="text-lg mb-4">I'm <span className="text-primary font-medium">Jiten Adhikari</span>, a self-taught penetration tester and cybersecurity enthusiast 
-              based in Kathmandu, Nepal.  I’m drawn to systems — how they work, how they break, and how to fix them better than before. 
+              based in Kathmandu, Nepal.  I'm drawn to systems — how they work, how they break, and how to fix them better than before. 
               </p>
               
-              <p className="mb-4">
-                <p className="font-bold mb-2">💻 How I Work</p>
-                I like keeping things clean — from code to workspaces. If I know what I'm doing, I prefer working solo or guiding others; if not, I'll gladly learn from those who know more. 
-                I don't rush, but I don't like wasting time either. Everything has its place — and I'll fix it if it doesn't.
+              <p className="font-bold mb-2">💻 How I Work</p>
+              <p className="mb-4">  I like keeping things clean — from code to workspaces. If I know what I'm doing, I prefer working solo or guiding others; if not, I'll gladly learn from those who know more. 
+              I don't rush, but I don't like wasting time either. Everything has its place — and I'll fix it if it doesn't.
               </p>
               
-              <p className="mb-4">
-                <p className="font-bold mb-2">🔧 What I Enjoy</p>
-                On screen, I tinker with side projects, play all kinds of games, and try to write (still working on that blog). 
-                Off screen, I ride, drive, hike, and quietly enjoy rainy nights. I like calm weather, watching planes take off, peeling electronics apart, and just... figuring things out.
+              <p className="font-bold mb-2">🔧 What I Enjoy</p>
+              <p className="mb-4">  On screen, I tinker with side projects, play all kinds of games, and try to write (still working on that blog). 
+              Off screen, I ride, drive, hike, and quietly enjoy rainy nights. I like calm weather, watching planes take off, peeling electronics apart, and just... figuring things out.
               </p>
               
-              <p className="mb-4">
-                <p className="font-bold mb-2">🚗 When I'm Off Screen</p>
-                If there's no screen, there's probably a road. I'll spend the day traveling, exploring, or just with family. 
-                I'm not the kind to sit still for long — unless I'm deep into a project or lost in classic music.
+              <p className="font-bold mb-2">🚗 When I'm Off Screen</p>
+              <p className="mb-4">  If there's no screen, there's probably a road. I'll spend the day traveling, exploring, or just with family. 
+              I'm not the kind to sit still for long — unless I'm deep into a project or lost in classic music.
               </p>
             </div>
           </motion.div>
@@ -143,7 +139,7 @@ export default function AboutSection() {
                     } transition-colors`}
                     onClick={() => setActiveTab(index)}
                   >
-                    {/* Use the component from the array dynamically */}
+                    {/* Use the component from the array dynamically */}                   
                     {React.createElement(passion.icon, { className: "h-6 w-6" })}
                   </button>
                 ))}

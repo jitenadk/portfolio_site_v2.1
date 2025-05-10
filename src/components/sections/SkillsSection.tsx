@@ -93,7 +93,7 @@ export default function SkillsSection() {
             ))}
           </div>
 
-          {/* Certifications and accolades */}
+          {/* Certifications and accolades */}          
           <motion.div
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
