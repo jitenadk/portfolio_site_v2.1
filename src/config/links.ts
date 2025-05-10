@@ -4,7 +4,7 @@ export const LINKS = {
   linkedin: 'https://www.linkedin.com/in/jitenadk/',
   twitter: 'https://x.com/9_73N',
   instagram: 'https://www.instagram.com/jitendotexe/',
-  photo_instagram: 'https://www.instagram.com/rajib_click',
+  photo_instagram: 'https://www.instagram.com/rajib_clicks/',
   flickr: 'https://www.flickr.com/people/196240129@N04/',
   steam: 'https://steamcommunity.com/id/0xlupin/',
 };
