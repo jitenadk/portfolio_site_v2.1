@@ -1,50 +1,76 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
-
-# Dependencies
+# Dependency directories and lock files
 node_modules/
-.pnp
-.pnp.js
+.pnp/
+.pnp.*
+.yarn/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
-# Testing
-/coverage
+# Build output
+.next/
+out/
+dist/
+build/
+coverage/
+.cache/
+next-cache/
+.temp/
+*.tmp
 
-# Next.js
-/.next/
-/out/
+# Environment and secret files
+.env*
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+*.pfx
 
-# Production
-/build
-/dist
-
-# Environment files
-.env
-.env.local
-.env.*.local
-
-# Logs
+# Logs and debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.log
+*.pid
+*.seed
+*.pid.lock
 
-# IDE
-.idea/
+# Editor/IDE files
 .vscode/
+.idea/
 *.swp
 *.swo
+*~
+*.bak
+*.orig
 
-# OS
+# OS generated files
 .DS_Store
+Thumbs.db
+Desktop.ini
+
+# Windows executables and metadata
+*.exe
+*.dll
+*.bat
+*.cmd
+*.msi
+*.ps1
+*.psm1
+*.lnk
+*.url
+*.Zone.Identifier
+
+# Miscellaneous
+*.zip
+*.tar.gz
+*.tgz
+*.7z
+*.rar
 Thumbs.db
 
 # Editor
@@ -87,17 +113,57 @@ next-cache
 *.csr
 *.p12
 *.pfx
+*.log
+.env*
 
-# IDE specific
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.idea/*
-!.idea/misc.xml
-!.idea/modules.xml
-!.idea/workspace.xml
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor swap/backup files
+*~
+*.swp
+*.swo
+*.bak
+*.orig
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+out/
+dist/
+build/
+.next/
+coverage/
+
+# Vercel
+.vercel/
+
+# Testing
+jest.config.js
+jest.setup.js
+
+# Cache
+.cache/
+next-cache/
+
+# Temp
+.temp/
+*.tmp
+
+# Debug
+*.pid
+*.seed
+*.pid.lock
 
 # Windows
 *.exe
