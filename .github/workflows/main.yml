@@ -27,8 +27,8 @@ jobs:
     - name: Upload build to Azure server
       uses: appleboy/scp-action@v0.1.3
       with:
-        host: ${{ secrets.20.20.20.20 }}
-        username: ${{ secrets.ubuntu }}
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
         source: ".next,public,package.json,package-lock.json"
         target: "/home/amara/next-app"
