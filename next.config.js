@@ -47,6 +47,8 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  poweredByHeader: false,
+  compress: true,
 };
 
 module.exports = withMDX({

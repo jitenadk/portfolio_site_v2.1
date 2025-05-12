@@ -80,49 +80,66 @@ export default function Navbar() {
   }, [pathname, activeSection]);
 
   useEffect(() => {
+    // Use a throttled scroll handler for better performance
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      lastScrollY = window.scrollY;
       
-      // Update URL when scrolling only on homepage
-      if (pathname === '/') {
-        // Auto-detect all sections with IDs
-        const allSections = Array.from(document.querySelectorAll('section[id]')) as HTMLElement[];
-        
-        // Sort sections by their position in the document
-        // This ensures we highlight the most relevant section when multiple are visible
-        const sortedSections = allSections.sort((a, b) => {
-          const aRect = a.getBoundingClientRect();
-          const bRect = b.getBoundingClientRect();
-          return Math.abs(aRect.top) - Math.abs(bRect.top);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(lastScrollY > 20);
+          ticking = false;
         });
         
-        // Find the first visible section
-        const visibleSection = sortedSections.find(el => {
-          const rect = el.getBoundingClientRect();
-          // Adjust the viewport criteria for better accuracy
-          return rect.top <= 150 && rect.bottom >= 100;
-        });
-        
-        if (visibleSection) {
-          const id = visibleSection.id;
-          const href = `/#${id}`;
-          setActiveSection(href);
-          
-          // Only update URL if needed
-          if (window.location.hash !== `#${id}`) {
-            window.history.replaceState(null, '', href);
-          }
-        }
+        ticking = true;
       }
     };
 
     // Use passive event listener for better performance
     window.addEventListener("scroll", handleScroll, { passive: true });
-    // Call once on mount to set initial active section
+    // Call once on mount to set initial state
     handleScroll();
     
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [pathname]);
+  }, []);
+  
+  // Separate effect for section detection using Intersection Observer
+  useEffect(() => {
+    if (pathname !== '/') return;
+    
+    // Auto-detect all sections with IDs on the page
+    const allSections = Array.from(document.querySelectorAll('section[id]')) as HTMLElement[];
+    if (allSections.length === 0) return;
+    
+    const observerOptions = {
+      rootMargin: "-20% 0px -30% 0px",
+      threshold: [0.3, 0.4, 0.5]
+    };
+    
+    const sectionObserver = new IntersectionObserver(entries => {
+      // Filter for sections that are currently intersecting
+      const visibleEntries = entries.filter(entry => entry.isIntersecting)
+                                   .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      
+      if (visibleEntries.length > 0) {
+        const mostVisible = visibleEntries[0];
+        const id = mostVisible.target.id;
+        const href = `/#${id}`;
+        
+        // Only update state and URL if needed
+        if (activeSection !== href) {
+          setActiveSection(href);
+          window.history.replaceState(null, '', href);
+        }
+      }
+    }, observerOptions);
+    
+    allSections.forEach(section => sectionObserver.observe(section));
+    
+    return () => sectionObserver.disconnect();
+  }, [pathname, activeSection]);
 
   return (
     <header

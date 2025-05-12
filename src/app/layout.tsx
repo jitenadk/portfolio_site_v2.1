@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Mono, Inter } from "next/font/google";
+import Script from "next/script";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -10,11 +11,15 @@ const spaceMono = Space_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-space-mono",
+  display: "swap",
+  preload: true,
 });
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -96,6 +101,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        {/* Preload critical assets */}
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body className={cn(
         spaceMono.variable,
         inter.variable,
@@ -109,6 +119,41 @@ export default function RootLayout({
           <Footer />
         </div>
         <ScrollToTopButton />
+        {/* Simple Performance Monitoring Script */}
+        <Script
+          id="performance-monitor"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Simple performance metric logging
+              if (typeof window !== 'undefined') {
+                // Performance observer for Largest Contentful Paint
+                try {
+                  const perfObserver = new PerformanceObserver((entryList) => {
+                    const entries = entryList.getEntries();
+                    const lastEntry = entries[entries.length - 1];
+                    console.log('LCP:', lastEntry.startTime, 'ms');
+                  });
+                  
+                  perfObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+                  
+                  // Basic metrics using Navigation Timing API
+                  window.addEventListener('load', () => {
+                    setTimeout(() => {
+                      if (performance && performance.timing) {
+                        const timing = performance.timing;
+                        const loadTime = timing.domContentLoadedEventEnd - timing.navigationStart;
+                        console.log('Page load time:', loadTime, 'ms');
+                      }
+                    }, 0);
+                  });
+                } catch (e) {
+                  console.log('Performance monitoring not supported', e);
+                }
+              }
+            `,
+          }}
+        />
       </body>
     </html>
   );
