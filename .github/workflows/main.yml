@@ -3,7 +3,7 @@ name: 🚀 Deploy to Azure VM
 on:
   push:
     branches:
-      - main  # Trigger deployment on push to main
+      - main 
 
 jobs:
   deploy:
@@ -27,11 +27,11 @@ jobs:
     - name: Upload build to Azure server
       uses: appleboy/scp-action@v0.1.3
       with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USER }}
+        host: ${{ secrets.20.20.20.20 }}
+        username: ${{ secrets.ubuntu }}
         key: ${{ secrets.SSH_KEY }}
         source: ".next,public,package.json,package-lock.json"
-        target: "/var/www/next-app"
+        target: "/home/amara/next-app"
 
     - name: SSH & Install + Restart App
       uses: appleboy/ssh-action@v0.1.10
@@ -40,7 +40,7 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          cd /var/www/next-app
+          cd /home/amara/next-app
           npm install --omit=dev
           pm2 start npm --name "next-app" -- start || pm2 reload next-app
           pm2 save
