@@ -42,5 +42,6 @@ jobs:
         script: |
           cd /home/amara/next-app
           npm install --omit=dev
+          npm install pm2 -g
           pm2 start npm --name "next-app" -- start || pm2 reload next-app
           pm2 save
