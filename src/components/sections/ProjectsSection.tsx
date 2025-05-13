@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink, Github, Shield, Network, Globe, Database, MapIcon } from "lucide-react";
+import { ExternalLink, Github, Shield, Network, Globe, Database, MapIcon, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { LINKS } from "@/config/links";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -48,6 +48,7 @@ const projects = [
     tags: ["Python", "SQL"],
     link: `${LINKS.github}/CVEMap`,
     icon: MapIcon,
+    Slug: "CVEMap",
   }
 ];
 
@@ -85,15 +86,28 @@ export default function ProjectsSection() {
                         <project.icon className="h-8 w-8 text-primary mb-2" />
                         <CardTitle className="text-xl">{project.title}</CardTitle>
                       </div>
-                      <Link
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-foreground/60 hover:text-primary transition-colors"
-                      >
-                        <Github className="h-5 w-5" />
-                        <span className="sr-only">GitHub</span>
-                      </Link>
+                      <div className="flex items-center gap-3">
+                        {project.Slug && (
+                          <Link
+                            href={`/projects/${project.Slug}`}
+                            title="View Documentation"
+                            className="text-foreground/60 hover:text-primary transition-colors"
+                          >
+                            <BookOpen className="h-5 w-5" />
+                            <span className="sr-only">Documentation</span>
+                          </Link>
+                        )}
+                        <Link
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="View on GitHub"
+                          className="text-foreground/60 hover:text-primary transition-colors"
+                        >
+                          <Github className="h-5 w-5" />
+                          <span className="sr-only">GitHub</span>
+                        </Link>
+                      </div>
                     </div>
                   </CardHeader>
                   <CardContent className="pb-4">

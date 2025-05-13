@@ -42,7 +42,10 @@ export default async function BlogPostPage({ params }: Params) {
   return (
     <div className="py-24">
       <div className="max-w-7xl mx-auto px-4">
-        <Link href="/blog" className="inline-flex items-center text-sm text-foreground/70 hover:text-primary transition-colors mb-8">
+        <Link 
+          href="/blog" 
+          className="inline-flex items-center text-sm text-foreground/70 hover:text-primary transition-colors mb-8"
+        >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to Blog
         </Link>
