@@ -30,7 +30,7 @@ jobs:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
-        source: ".next,public,package.json,package-lock.json"
+        source: ".next,public,package.json,package-lock.json,src/content/blog"
         target: "/home/amara/next-app"
 
     - name: SSH & Install + Restart App
