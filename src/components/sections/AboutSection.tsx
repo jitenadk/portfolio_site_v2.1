@@ -138,6 +138,7 @@ export default function AboutSection() {
                       activeTab === index ? "text-primary" : "text-zinc-500"
                     } transition-colors`}
                     onClick={() => setActiveTab(index)}
+                    aria-label={passion.title}
                   >
                     {/* Use the component from the array dynamically */}                   
                     {React.createElement(passion.icon, { className: "h-6 w-6" })}
