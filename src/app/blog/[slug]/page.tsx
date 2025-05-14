@@ -6,8 +6,6 @@ import { notFound } from "next/navigation";
 import { getPostById } from "@/lib/blog";
 import { Button } from "@/components/ui/button";
 
-
-
 type Params = {
   params: {
     slug: string;

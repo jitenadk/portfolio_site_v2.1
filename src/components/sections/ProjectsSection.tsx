@@ -32,6 +32,7 @@ const projects = [
     tags: ["JavaScript", "D3.js", "APIs", "Real-time data"],
     link: `${LINKS.github}/ThreatMap`,
     icon: Globe,
+    // Slug: "ThreatMap",
   },
   {
     id: "sqlshield",
