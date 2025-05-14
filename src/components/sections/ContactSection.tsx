@@ -4,9 +4,9 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { LINKS } from "@/config/links";
-import { Mail, Github, Linkedin, Twitter, Instagram } from "lucide-react";
-import { FaFlickr } from "react-icons/fa";
-import { SiSteam } from "react-icons/si";
+import { Mail, Github, Linkedin, Twitter, Instagram} from "lucide-react";
+import { FaFlickr} from "react-icons/fa";
+import { SiSteam, SiDiscord } from "react-icons/si";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 const commands = [
@@ -108,7 +108,7 @@ export default function ContactSection() {
 
               <div className="border-t border-primary/10 pt-4">
                 <h3 className="text-lg font-semibold mb-4">Socials:</h3>
-                <div className="flex flex-wrap gap-10 justify-center">
+                <div className="flex flex-wrap gap-10 warp-1 justify-center">
                   {[
                     { name: "Email", url: LINKS.email, icon: Mail },
                     { name: "GitHub", url: LINKS.github, icon: Github },
@@ -117,6 +117,7 @@ export default function ContactSection() {
                     { name: "Instagram", url: LINKS.instagram, icon: Instagram },
                     { name: "Flickr", url: LINKS.flickr, icon: FaFlickr },
                     { name: "Steam", url: LINKS.steam, icon: SiSteam },
+                    { name: "Discord", url: LINKS.discord, icon: SiDiscord},
                   ].map((social) => (
                     <a
                       key={social.name}
