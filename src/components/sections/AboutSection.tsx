@@ -3,9 +3,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Car, Camera, Compass, Code, Cpu, Gamepad2, Leaf } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { LINKS } from "@/config/links";
 
 const passions = [
   {
@@ -116,6 +118,14 @@ export default function AboutSection() {
               <p className="mb-4">  If there's no screen, there's probably a road. I'll spend the day traveling, exploring, or just with family. 
               I'm not the kind to sit still for long — unless I'm deep into a project or lost in classic music.
               </p>
+
+              <div className="mt-6">
+                <Button asChild variant="outline">
+                  <a href={LINKS.resume} target="_blank" rel="noopener noreferrer">
+                    Check out my full résumé
+                  </a>
+                </Button>
+              </div>
             </div>
           </motion.div>
           <motion.div
