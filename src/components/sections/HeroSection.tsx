@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown, Camera, Book } from "lucide-react";
+import { LINKS } from "@/config/links";
 
 export default function HeroSection() {
   const [typingComplete, setTypingComplete] = useState(false);
@@ -80,6 +81,11 @@ export default function HeroSection() {
           </Button>
           <Button asChild variant="outline" size="lg">
             <Link href="/#contact">Contact Me</Link>
+          </Button>
+          <Button asChild variant="outline" size="lg">
+            <a href={LINKS.resume} target="_blank" rel="noopener noreferrer">
+              Resume
+            </a>
           </Button>
         </div>
         

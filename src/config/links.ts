@@ -7,5 +7,6 @@ export const LINKS = {
   photo_instagram: 'https://www.instagram.com/rajib_clicks/',
   flickr: 'https://www.flickr.com/people/196240129@N04/',
   steam: 'https://steamcommunity.com/id/0xlupin/',
-  discord: 'https://discord.com/users/894604021564854312'
+  discord: 'https://discord.com/users/894604021564854312',
+  resume: '/resume.pdf'
 };

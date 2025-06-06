@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Instagram, Linkedin, Mail, Camera, Book } from "lucide-react";
+import { Github, Instagram, Linkedin, Mail, Camera, Book, FileText } from "lucide-react";
 import { LINKS } from "@/config/links";
 
 export default function Footer() {
@@ -71,6 +71,17 @@ export default function Footer() {
               <Book className="h-4 w-4" />
               Blog
             </Link>
+          </div>
+          <div className="flex space-x-2 items-center justify-center">
+            <a
+              href={LINKS.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground/80 hover:text-primary transition-colors flex items-center gap-2 font-mono text-sm"
+            >
+              <FileText className="h-4 w-4" />
+              Resume
+            </a>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/#about" className="text-foreground/80 hover:text-primary transition-colors font-mono text-sm">About</Link>
